@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/redirect', 'UsersController@redirect');
+Route::get('/callback', 'UsersController@callback');
+
+Route::get('login/github', 'UsersController@redirectToProvider');
+Route::get('login/github/callback', 'UsersController@handleProviderCallback');
